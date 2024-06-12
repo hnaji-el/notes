@@ -1,0 +1,12 @@
+JSX
+Components
+Application Structure
+Fragments
+Iteration
+Conditional Rendering
+Styling In React
+
+Compiler --> bundler
+
+
+DOM: The live-running environment that displays the website
