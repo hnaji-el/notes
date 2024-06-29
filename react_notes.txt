@@ -1,44 +1,38 @@
-JSX
-Components
-Application Structure
-Fragments
-Iteration
-Conditional Rendering
-Styling In React
+1. The Browser turns static HTML into DOM.
+               Browser
+     HTML    ---------->    DOM
+  
+2. What is DOM?
+  - DOM is a live-running environment that displays the website.
 
-   BUILD SYSTEM
-COMPILER , BUNDLER
+3. HTML vs DOM
+  - To use an analogy: HTML is the blueprint for a specific car,
+    and the DOM is the car itself, zipping around the city.
 
-               BROWSER
-STATIC HTML    ------>     DOM
+4. React philosophy
+  - React is a platform-agnostic.
+  - React has a core React library and different platform-specific renders.
 
-REACT ELEMENT  ------> HTML ELEMENT
+5. What is a React element?
+  React element is a JavaScript object that describes a part of the UI.
 
-html document | script
-React is used within a build system
-React uses a syntax called JSX
+6. Build System.
+  - React is used within a build system.
+  - The build system takes the files we write, and it processes them,
+    it gets them ready to actually be used.
 
-DOM: The live-running environment that displays the website
+7. Why do we need a build system?
+  - We need it for two reasons: compiling and bundling.
+  - JSX: Syntax Extension isn't a valid JavaScript, the Browser doesn't understand it.
+    So, JSX needs to be compiled into JS
+  - Compile modern JavaScript features into browser-friendly JavaScript.
+  - React apps often have hunders or even thousands JavaScript files,
+    So need to bundled them together for a good performance.
+
+
+
 
 
 The truly magical thing about React is that we don't have to worry about keeping our state (held in JavaScript) and our UI (in the DOM?) in sync.
 
 With React, we're describing what we want the UI to be, based on the current application state. React takes those descriptions and makes it real.
-
-const element = React.createElement(
-  'p',
-  { id: 'hello' },
-  'Hello World!'
-);
-
-{
-  type: "p",
-  key: null,
-  ref: null,
-  props: {
-    id: 'hello',
-    children: 'Hello World!',
-  },
-  _owner: null,
-  _store: { validated: false }
-}
