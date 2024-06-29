@@ -29,9 +29,11 @@
   - React apps often have hunders or even thousands JavaScript files,
     So need to bundled them together for a good performance.
 
+8. 
 
 
-
+How React reacts to the things that change in our application.
+As things change in the DOM, React will use whichever method is most appropriate to convey those changes
 
 The truly magical thing about React is that we don't have to worry about keeping our state (held in JavaScript) and our UI (in the DOM?) in sync.
 
