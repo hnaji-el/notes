@@ -13,10 +13,10 @@
   - React is a platform-agnostic.
   - React has a core React library and different platform-specific renders.
 
-5. What is a React element?
+5. React element
   React element is a JavaScript object that describes a part of the UI.
 
-6. Build System.
+6. Build System
   - React is used within a build system.
   - The build system takes the files we write, and it processes them,
     it gets them ready to actually be used.
@@ -29,11 +29,24 @@
   - React apps often have hunders or even thousands JavaScript files,
     So need to bundled them together for a good performance.
 
-8. 
+8. Virtual DOM
+  - Virtual DOM is a programming concept used by React to enhance performance by maintaining
+    a lightweight, in-memory representation of the Real DOM.
+
+9. ReactDOM
+  - ReactDOM is the implementation of the Virtual DOM.
+  - ReactDOM handles the rendering of React elements in the Real DOM.
+
+10. JSX
+  - JSX is a syntax extension for JavaScript that allows HTML-like syntax within JavaScript,
+    making React elements easier to read and write.
+
 
 
 How React reacts to the things that change in our application.
-As things change in the DOM, React will use whichever method is most appropriate to convey those changes
+
+
+
 
 The truly magical thing about React is that we don't have to worry about keeping our state (held in JavaScript) and our UI (in the DOM?) in sync.
 
