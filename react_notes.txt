@@ -41,6 +41,9 @@
   - JSX is a syntax extension for JavaScript that allows HTML-like syntax within JavaScript,
     making React elements easier to read and write.
 
+11. JSX Compiler
+  - The JSX Compiler compiles JSX into pure JavaScript without touching expression slots;
+    it just forwards them a long to pure JavaScript.
 
 
 How React reacts to the things that change in our application.
