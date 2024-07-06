@@ -1,14 +1,9 @@
-const App = () => {
-  return (
-    <div style={{color: "red", fontSize: "40px"}}>Hello World</div>
-  );
-};
+function HelloC() {
+  return <div>Hello World</div>;
+}
+
+function App() {
+  return <div>{HelloC()}</div>;
+}
 
 export default App;
-
-/*
-div {
-  color: red;
-  font-size: 20px;
-}
-*/

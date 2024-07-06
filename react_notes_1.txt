@@ -1,0 +1,27 @@
+1. React
+  - React is a component-based library.
+
+2. Component
+  - A component is a bundle of markup, styles and logic that controls
+    everything about a specific part of the UI.
+
+3. Code organization
+  - Instead of separating out application into markup (written in HTML),
+    styles (written in CSS) and logic (written JavaScript),
+    we organize our application into components.
+  - It is a different mental model for code organization.
+
+4. Mechanisms of reuse
+  - With HTML, we have partials.
+  - With CSS, we have classes.
+  - With JavaScript, we have functions.
+  - With React, we have components that bundle up all 3.
+
+5. Application Structure
+  [ index.js ]
+  - It is responsible for rendering our React application, turning the React elements
+    we write into live DOM nodes.
+  - It includes setup tasks like import global CSS files, or set up any error-logging services.
+  [ app.js ]
+  - It manages core layout stuff.
+  - It includes routes.
