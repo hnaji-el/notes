@@ -37,6 +37,10 @@ Commit: If any DOM updates are required, React will perform those changes
         Once the changes have been committed, React goes idle, and waits for the next trigger,
         the next state change.
 
+6. Rendering Vs Painting
+  - the term "render" means we are taking some sort of unprocessed raw input, and generating
+    the final ready-to-use output.
+
 
 
 
