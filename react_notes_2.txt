@@ -37,6 +37,9 @@ Commit: If any DOM updates are required, React will perform those changes
         Once the changes have been committed, React goes idle, and waits for the next trigger,
         the next state change.
 
+6. Asynchronous Updates
+  - Updating a state variable is asynchronous (state updates are asynchronous).
+  - Because state updates are asynchronous, So they can be batched.
 
 
 

@@ -1,10 +1,23 @@
-function fn(num) {
-  console.log(num);
+const names = ['zero', 'one', 'two', 'three'];
+
+function outerFn() {
+  console.log('outer function');
+
+  function innerFn(num) {
+    console.log('inner function');
+    return names[num];
+  }
+
+  return innerFn;
 }
 
-function fn_(num = 0) {
-  console.log(num);
-}
+const innerFn_ = outerFn(); 
 
-fn();
-fn_(null);
+let name_ = innerFn_(0);
+console.log(name_);
+
+names[0] = 'zeroo';
+
+name_ = innerFn_(0);
+console.log(name_);
+
