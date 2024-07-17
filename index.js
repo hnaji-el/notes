@@ -1,9 +1,10 @@
-const arr = [1, 2, 3, [4]];
-let [a, , , b] = arr;
+function fn(num) {
+  console.log(num);
+}
 
-a = 10;
-b[0] = 40;
+function fn_(num = 0) {
+  console.log(num);
+}
 
-console.log(arr);
-console.log(a);
-console.log(b);
+fn();
+fn_(null);

@@ -1,0 +1,52 @@
+1. Events
+  - Events allow web applications to be dynamic.
+  - We are listening for an event, and an event handler is called when the event is fired.
+  -? As the user interacts with the page, hundreds of events are fired off in response.
+  - Event Listener takes a place in memory, so we need to pay attention for memory leak.
+  - React has a built-in event delegation system that implements a bunch of optimizations
+    for us. like batching multiple event listeners together to reduce memory consumption.
+
+2. React abstraction.
+  - One of the core ideas behind React is that it does the DOM manipulation for you.
+
+3. React state
+  - State is used for values that change over time.
+
+4. React hook
+  - A hook is a special type of function that allows us to "hook into" React internals.
+
+5. Core React Loop (Fundamental flow of React)
+
+Mount: When we render the component for the first time, there is no previous snapshot to
+       compare to. and so, React will take React elements (the description), and turns them
+       into DOM nodes, and injects them to DOM.
+
+Trigger: When something happens that calls the setter function, the state variable
+         gets updated. And Whenever a state variable is updated, it triggers a re-render.
+
+Render: Because the state changed, we need to generate a new description of the UI!
+        React will invoke our component function again, producing a new set of React elements.
+        With this new snapshot in hand, React will comparing it to the previous snapshot
+        and figuring out what needs to happen in order for the DOM to match
+        this latest snapshot.
+
+Reconciliation: Hunting for changes between the two snapshots.
+
+Commit: If any DOM updates are required, React will perform those changes
+        (eg. changing the text content of a DOM node, creating new nodes, deleting removed nodes, etc).
+        Once the changes have been committed, React goes idle, and waits for the next trigger,
+        the next state change.
+
+
+
+
+
+
+How React reacts to the things that change in our application.
+The library, after all, is literally named for how it reacts to state changes!
+
+
+
+
+
+

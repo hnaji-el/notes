@@ -22,12 +22,13 @@
     it gets them ready to actually be used.
 
 7. Why do we need a build system?
-  - We need it for two reasons: compiling and bundling.
+  - We need it for two reasons: bundling and compiling.
   - JSX: Syntax Extension isn't a valid JavaScript, the Browser doesn't understand it.
-    So, JSX needs to be compiled into JS
-  - Compile modern JavaScript features into browser-friendly JavaScript.
+    So, JSX needs to be compiled into JS. [compiler]
+  - Compile modern JavaScript features into browser-friendly JavaScript. [compiler]
   - React apps often have hunders or even thousands JavaScript files,
-    So need to bundled them together for a good performance.
+    So need to bundled them together for a good performance. [bundler]
+  - Support importing non-JS files. [bundler]
 
 8. Virtual DOM
   - Virtual DOM is a programming concept used by React to enhance performance by maintaining
@@ -46,7 +47,6 @@
     it just forwards them a long to pure JavaScript.
 
 
-How React reacts to the things that change in our application.
 
 
 

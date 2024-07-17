@@ -25,3 +25,39 @@
   [ app.js ]
   - It manages core layout stuff.
   - It includes routes.
+
+6. Mapping over data
+  - You can render an array inside JSX, React will unpack it and render each item.
+
+7. Keys
+  - Keys exist to show React the route. By uniquely indentifying each item across all snapshots,
+    React can figure out exactly what to do, ensuring the best performance and no edge-case issues.
+
+8. Styling in React
+                                                                                      CSS Modules
+                                                                                      Styled Components
+  - *:Traditional CSS Styling Method  ==>  **:Naming Methodologies like BEM  ==>  ***:Emotion
+                                                                                      Vanilla Extracts
+                                                                                      Stitches
+
+  *:   Problems: naming, specificity races that produce long and long CSS selectors, etc.
+  **:  Solve the problems if it's followed 100%, and this is needed a superhuman discipline, especially
+       for larger projects and teams.
+  ***: Wet get all the benefits of naming methodologies like BEM, in terms of guaranteed unique selector
+       names. The come with AUTOMATIC SCOPING.
+       AUTOMATIC SCOPING: generate long, guaranteed-unique CSS selector names and scoped them to the component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

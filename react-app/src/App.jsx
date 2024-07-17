@@ -1,9 +1,5 @@
-function HelloC() {
-  return <div>Hello World</div>;
-}
-
 function App() {
-  return <div>{HelloC()}</div>;
+  return <div>Hello World</div>;
 }
 
 export default App;
