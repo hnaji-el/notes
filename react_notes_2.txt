@@ -16,26 +16,29 @@
   - A hook is a special type of function that allows us to "hook into" React internals.
 
 5. Core React Loop (Fundamental flow of React)
-
-Mount: When we render the component for the first time, there is no previous snapshot to
-       compare to. and so, React will take React elements (the description), and turns them
-       into DOM nodes, and injects them to DOM.
-
-Trigger: When something happens that calls the setter function, the state variable
-         gets updated. And Whenever a state variable is updated, it triggers a re-render.
-
-Render: Because the state changed, we need to generate a new description of the UI!
-        React will invoke our component function again, producing a new set of React elements.
-        With this new snapshot in hand, React will comparing it to the previous snapshot
-        and figuring out what needs to happen in order for the DOM to match
-        this latest snapshot.
-
-Reconciliation: Hunting for changes between the two snapshots.
-
-Commit: If any DOM updates are required, React will perform those changes
-        (eg. changing the text content of a DOM node, creating new nodes, deleting removed nodes, etc).
-        Once the changes have been committed, React goes idle, and waits for the next trigger,
-        the next state change.
+  Mount::
+  - When we render the component for the first time, there is no previous snapshot to
+    compare to. and so, React will take React elements (the description), and turns them
+    into DOM nodes, and injects them to DOM.
+  
+  Trigger::
+  - When something happens that calls the setter function, the state variable
+    gets updated. And Whenever a state variable is updated, it triggers a re-render.
+  
+  Render::
+  - Because the state changed, we need to generate a new description of the UI!
+    React will invoke our component function again, producing a new set of React elements.
+    With this new snapshot in hand, React will comparing it to the previous snapshot
+    and figuring out what needs to happen in order for the DOM to match this latest snapshot.
+  
+  Reconciliation::
+  - Hunting for changes between the two snapshots.
+  
+  Commit:
+  - If any DOM updates are required, React will perform those changes
+    (eg. changing the text content of a DOM node, creating new nodes, deleting removed nodes, etc).
+    Once the changes have been committed, React goes idle, and waits for the next trigger,
+    the next state change.
 
 6. Rendering Vs Painting
   - the term "render" means we are taking some sort of unprocessed raw input, and generating
@@ -44,6 +47,89 @@ Commit: If any DOM updates are required, React will perform those changes
 6. Asynchronous Updates
   - Updating a state variable is asynchronous (state updates are asynchronous).
   - Because state updates are asynchronous, So they can be batched.
+
+7. React state Vs Svelte variable
+  FACTS::
+  - React exists within the context of JavaScript rules.
+  - With React, you are writing JavaScript.
+  - With Svelte, you are not writing JavaScript, you are writing a custom language called Svelte
+    and it compiles into JavaScript.
+
+  - JavaScript doesn't give a way to observe variables
+  - JavaScript doesn't give a way to thread a value through function calls.
+
+  WHAT DO WE NEED?::
+  - We need to create a variable that lives outside of the component.
+  - We need to scoped this variable to component instance, So, I can create multiple component instances.
+
+  SOLUTION::
+  - React state solution is actually a really elegant way to solve the problem.
+
+8. Built-in HTML Forms
+  - Forms have a default submission behaviour, that they will make a network request when I submit them,
+    executing a full page reload. unless I explicitly prevent that with `event.preventDefault()`.
+
+  - Form controls that trigger the form submit event are:
+    -> Click/Tap the submit button.
+       - Click using `pointing devices` like: Mouse, Touchpad, etc.
+       - Tap using `touch-sensitive screens` like: smartphones, tablets, etc.
+    -> Press the 'Enter' key whenever the input or submit button is focused.
+       - Press using the keyboard (input device).
+
+  - The built-in HTML form inputs are classified into two main classes:
+    -> The first one defines current value as DOM node's value property.
+       - Most form inputs except checkboxes and radio buttons.
+       - The value HTML attribute plays the role of default value.
+    -> The second one defines current value as DOM node's checked property. And they have "on" value.
+       - Checkboxes, radio buttons.
+       - The checked HTML attribute plays the role of default value.
+
+  - There are two kinds of inputs:
+    -> Controlled inputs
+    -> Uncontrolled inputs
+
+  - There are two approaches for data submission:
+    -> Controlled Approach or Data Binding Approach
+    -> Uncontrolled Approach or FormData Approach
+       - discrete request
+       - multipart (multipart/form-data) request
+
+9. React Forms
+  - React make changes just on controlled approach (data binding approach).
+  - React has tweaked the form controls so that they all follow the same pattern.
+
+  - What React do is making the value HTML attribute (for most inputs) and checked HTML attribute
+    (for checkboxes and radio buttons) locks (controls) the form input, So that React will ensure
+    that the DOM node's value is exactly the value HTML attribute (same for checked).
+  - How does React do that?.
+  - When the user type a character, the browser re-paint the character to display it.
+    at the same time React undo this change, so the browser re-paint again to hide this character.
+    So React with that will make sure that the form input value is controlled by the value HTML attribute
+    (same for checked).
+  - How can we make changes?
+  - For that we need to use a React state as a value of the value HTML attribute, So that we lock the
+    the form input value to the React state. and we respond to user's changes with `onChange`
+    event handler by updating the state variable with the new value.
+  - As a summary, the pattern is:
+      -> The current value is locked using either value (for most inputs)
+         or checked (for checkboxes and radio buttons).
+      -> We respond to changes with the onChange event listener.
+
+  - Data Binding required two attributes value/checked and onChange.
+  - In Data Binding, the state can update the input, and the input can update the state.
+
+  RULES::
+  - Follow the HTML standards (eg. radio buttons should be grouped using the “name” attribute).
+
+
+  
+
+
+
+
+
+
+
 
 
 
