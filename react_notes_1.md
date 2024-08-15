@@ -7,7 +7,7 @@
 
 3. Code organization
   - Instead of separating out application into markup (written in HTML),
-    styles (written in CSS) and logic (written JavaScript),
+    styles (written in CSS) and logic (written in JavaScript),
     we organize our application into components.
   - It is a different mental model for code organization.
 
@@ -30,8 +30,15 @@
   - You can render an array inside JSX, React will unpack it and render each item.
 
 7. Keys
-  - Keys exist to show React the route. By uniquely indentifying each item across all snapshots,
-    React can figure out exactly what to do, ensuring the best performance and no edge-case issues.
+  - Keys exist to show React the route. By uniquely identifying each item across all snapshots,
+    React can figure out exactly what to do (React knows which DOM operations to trigger between renders),
+    ensuring the best performance and no edge-case issues.
+  - How do we set the key?
+    -> If each item have a unique id, so set it as a key.
+    -> else if the order stays 100% consistent, use the array index as a unique id.
+    -> else check if there is a property of item data that can be used as a unique id.
+    -> else check if there is a possibility to combine some properties to generate a unique id.
+    -> else use `Math.random()`/`crypto.randomUUID()`/`Date.now()` to dynamically generating unique id.
 
 8. Styling in React
                                                                                       CSS Modules

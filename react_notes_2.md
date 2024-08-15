@@ -94,7 +94,7 @@
        - discrete request
        - multipart (multipart/form-data) request
 
-9. React Forms
+8.1. React Forms
   - React make changes just on controlled approach (data binding approach).
   - React has tweaked the form controls so that they all follow the same pattern.
 
@@ -111,9 +111,9 @@
     the form input value to the React state. and we respond to user's changes with `onChange`
     event handler by updating the state variable with the new value.
   - As a summary, the pattern is:
-      -> The current value is locked using either value (for most inputs)
-         or checked (for checkboxes and radio buttons).
-      -> We respond to changes with the onChange event listener.
+    -> The current value is locked using either value (for most inputs)
+       or checked (for checkboxes and radio buttons).
+    -> We respond to changes with the onChange event listener.
 
   - Data Binding required two attributes value/checked and onChange.
   - In Data Binding, the state can update the input, and the input can update the state.
@@ -121,24 +121,66 @@
   RULES::
   - Follow the HTML standards (eg. radio buttons should be grouped using the “name” attribute).
 
+8.2. Client-side Validation
+  - There are two ways:
+    -> JavaScript way: generally add a validation logic in `submit` event handler function.
+       SNIPPET CODE::
+       function handleSubmit(event) {
+         if (validation fails) {
+           return;
+         }
+         // ... some code in case validation not fail
+       }
+    -> Built-in HTML validation attributes: (recommanded approach).
+       - We add constraints using [ required, min, max, minlength, maxlength, pattern, etc ]
+       - Form input has a `validity` DOM node's property that implements `ValidityState` interface.
+         This property has validity states of form input.
+       - Form input matches `:invalid` or `:valid` CSS pseudo-classes based on the value of `validity.valid`
+       - We can use JavaScript to access `validity` and check for validation.
+       - Form submission.
+       - Tooltip (pattern with title to add a description of what the pattern do).
 
+8.3. HTML validation attributes
+  - minlength & maxlength: doesn't work properly when the input's value is changed (ex: use .toUpperCase())
+  - maxlength: I'm using it to stop the user at the `maxlength` (it seems working properly in all cases).
+  - I use `pattern` with `maxlength`.
+
+8.4. Best User Experience with Forms
+  - Provide instructions to help users understand how to complete the form and use individual form controls.
+    -> Providing instructions within the <label> may be sufficient.
+    -> If providing instructions outside of labels, which allows more flexible positioning and design,
+       consider using aria-labelledby or aria-describedby.
+  - Provide fast feedback as possible.
+
+9. Props Vs. State
+  - Props allow to customize the behaviour of a given component.
+  - State is used for values that change over time.
+
+10. Complex state (mutation bug).
+  - Never mutate React state.
+
+11. Front-end Performance
+  - We generally don't work with enormous data sets on the front-end. It would take too long to transfer
+    that much data over the network, and low-end devices wouldn't have the memory to hold it all.
+  - Iteration speed is rarely the limiting factor on the front-end.
+  - When it comes to front-end performance, we have bigger things to worry about than this stuff.
   
+12. Lifting State Up
+  - Lifting state up is an incredibly important idea/concept.
+  - We should lift the state to the lowest/closest ancestor component.
+  - Why not lift all state to the very top of the application?
+    -> unless your app is very tiny, it isn't practical, it would lead to problems in terms of performance
+       and code organization.
+  - Notes:
+    -> In React the data can only pass through components via props, or via context.
 
-
-
-
-
-
-
-
-
+13. Component Instances
+  - Whenever we render a component, we “mount” the component. Mounting a component involves two steps:
+    -> Converting React elements into DOM nodes.
+    -> Creating a component instance, an object that holds all the contextual information about this
+       particular instance of the component.
+  - When we unmount the component, we destroy the component instance.
 
 
 How React reacts to the things that change in our application.
 The library, after all, is literally named for how it reacts to state changes!
-
-
-
-
-
-
