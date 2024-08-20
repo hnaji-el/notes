@@ -17,24 +17,24 @@
 
 5. Core React Loop (Fundamental flow of React)
   Mount::
-  - When we render the component for the first time, there is no previous snapshot to
-    compare to. and so, React will take React elements (the description), and turns them
-    into DOM nodes, and injects them to DOM.
+  - When we render the component for the first time, there is no previous snapshot
+    to compare to, so React will take the React elements (the description),
+    turn them into DOM nodes, and inject them into the DOM.
+    Additionally, React will create a component instance.
   
   Trigger::
-  - When something happens that calls the setter function, the state variable
+  - When something happens that calls the state-setter function, the state variable
     gets updated. And Whenever a state variable is updated, it triggers a re-render.
   
   Render::
-  - Because the state changed, we need to generate a new description of the UI!
+  - Because the state changed, we need to generate a new description of the UI!.
     React will invoke our component function again, producing a new set of React elements.
-    With this new snapshot in hand, React will comparing it to the previous snapshot
-    and figuring out what needs to happen in order for the DOM to match this latest snapshot.
+    With this new snapshot in hand, React will compare it to the previous snapshot
+    and figure out what needs to happen for the DOM to match this latest snapshot.
+    This process is known as reconciliation.
+    Reconciliation is the process of hunting for changes between the two snapshots.
   
-  Reconciliation::
-  - Hunting for changes between the two snapshots.
-  
-  Commit:
+  Commit::
   - If any DOM updates are required, React will perform those changes
     (eg. changing the text content of a DOM node, creating new nodes, deleting removed nodes, etc).
     Once the changes have been committed, React goes idle, and waits for the next trigger,
@@ -179,7 +179,14 @@
     -> Converting React elements into DOM nodes.
     -> Creating a component instance, an object that holds all the contextual information about this
        particular instance of the component.
-  - When we unmount the component, we destroy the component instance.
+  - When we “unmount” the component, we destroy the component instance.
+
+14. Snapshots
+  - A snapshot is a more abstract/metaphorical concept. It refers to the data available at a moment
+    in time as a result of performing a render. It's a combination of two things:
+    -> The specific values of any props/state.
+    -> The React elements returned from the component function.
+
 
 
 How React reacts to the things that change in our application.
