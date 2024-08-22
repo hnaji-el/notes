@@ -11,7 +11,11 @@
 
 4. React philosophy
   - React is a platform-agnostic.
-  - React has a core React library and different platform-specific renders.
+  - React has a core React library and different platform-specific renderers.
+
+  -> `react-dom` for the web
+  -> `react-native` for mobile (iOS / Android) or desktop (Windows / macOS) applications
+  -> `react-three-fiber` for 3D scenes using WebGL and Three.js
 
 5. React element
   React element is a JavaScript object that describes a part of the UI.

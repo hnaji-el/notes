@@ -1,9 +1,3 @@
-const obj = {
-  a: 10,
+const mediaQuery = window.matchMedia("width <= 430px");
 
-  foo() {
-    console.log(this.a);
-  }
-};
-
-obj.foo();
+mediaQuery.addEventListener("change", fn);

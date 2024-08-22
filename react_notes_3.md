@@ -35,16 +35,6 @@
   - Lazy loading other components
   - Behaviours like scrolling to the top of the page on mount
 
-# React.useState() Hook
-  
-  - React.useState() hook lets us “hook into” the component instance, getting and setting state
-    from the instance.
-  
-# React.useId() Hook
-
-  - React.useId() hook lets us “hook into” the component instance, getting the unique id for
-    every component instance.
-
 # Rules of Hooks
 
   - There are two "Rules of Hooks":
@@ -59,6 +49,52 @@
   - Why does React rely on the order?
     -> React doesn't take any unique id about hooks. (ex: React.useState({id: 'x', value: 0}))
     -> React has no visibility into the code that we write inside our components.
+
+# React.useState() Hook
+  
+  - React.useState() hook lets us “hook into” the component instance, getting and setting state
+    from the instance.
+  
+# React.useId() Hook
+
+  - React.useId() hook lets us “hook into” the component instance, getting the unique id for
+    every component instance.
+
+# React.useRef() Hook
+ 
+  - It creates a ref object containing a current property. ({ current: undefined })
+  - The ref object is like a box, We can store whatever we want in this box: DOM nodes, numbers,
+    arrays, objects, functions, etc. But the primary use case for refs is to store DOM nodes.
+  - The ref attribute can be either a ref object or a function.
+    -> The ref function will be called on every single render.
+    -> With the ref object, React sets the ref on the very first render. leading to improved
+       performance.
+  - This is the conventional way to work with DOM node references in React!.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

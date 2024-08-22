@@ -7,7 +7,15 @@
     for us. like batching multiple event listeners together to reduce memory consumption.
 
 2. React abstraction.
-  - One of the core ideas behind React is that it does the DOM manipulation for you.
+  React likes for us to stay within its abstraction
+  - One of the core ideas behind React is that it does the DOM manipulation for us.
+    -> We shouldn't really interacting with the DOM directly at all.
+  - React has a built-in event delegation system.
+    -> The recommended way to handle events in React is to use event handler attributes.
+       -> Automatic cleanup
+       -> Improved performance
+       -> No DOM interaction
+    -> While we do sometimes have to use `addEventListener` for window-level events.
 
 3. React state
   - State is used for values that change over time.

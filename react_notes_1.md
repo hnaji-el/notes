@@ -53,18 +53,3 @@
   ***: Wet get all the benefits of naming methodologies like BEM, in terms of guaranteed unique selector
        names. The come with AUTOMATIC SCOPING.
        AUTOMATIC SCOPING: generate long, guaranteed-unique CSS selector names and scoped them to the component.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
