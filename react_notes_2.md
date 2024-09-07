@@ -2,7 +2,9 @@
   - Events allow web applications to be dynamic.
   - We are listening for an event, and an event handler is called when the event is fired.
   -? As the user interacts with the page, hundreds of events are fired off in response.
-  - Event Listener takes a place in memory, so we need to pay attention for memory leak.
+  - Event listener is a long-running process that will call the event handler whenever the
+    event triggered.
+  - Event listener takes a place in memory, so we need to pay attention for memory leak.
   - React has a built-in event delegation system that implements a bunch of optimizations
     for us. like batching multiple event listeners together to reduce memory consumption.
 
@@ -15,7 +17,8 @@
        -> Automatic cleanup
        -> Improved performance
        -> No DOM interaction
-    -> While we do sometimes have to use `addEventListener` for window-level events.
+    -> While we do sometimes have to use `addEventListener` for window-level events
+       (global events).
 
 3. React state
   - State is used for values that change over time.
@@ -81,7 +84,8 @@
     -> Click/Tap the submit button.
        - Click using `pointing devices` like: Mouse, Touchpad, etc.
        - Tap using `touch-sensitive screens` like: smartphones, tablets, etc.
-    -> Press the 'Enter' key whenever the input or submit button is focused.
+    -> Press the 'Enter' key whenever the input or submit button is focused. 
+       Press the 'Spacebar' key when the submit button is focused.
        - Press using the keyboard (input device).
 
   - The built-in HTML form inputs are classified into two main classes:
@@ -184,18 +188,18 @@
 
 13. Component Instances
   - Whenever we render a component, we “mount” the component. Mounting a component involves two steps:
-    -> Converting React elements into DOM nodes.
     -> Creating a component instance, an object that holds all the contextual information about this
        particular instance of the component.
-  - When we “unmount” the component, we destroy the component instance.
+    -> Converting React elements into DOM nodes.
+  - When we “unmount” the component, the opposite of all that happens:
+    -> Destroying the component instance.
+    -> Cleaning up any DOM nodes associated with that instance.
 
 14. Snapshots
   - A snapshot is a more abstract/metaphorical concept. It refers to the data available at a moment
     in time as a result of performing a render. It's a combination of two things:
     -> The specific values of any props/state.
     -> The React elements returned from the component function.
-
-
 
 How React reacts to the things that change in our application.
 The library, after all, is literally named for how it reacts to state changes!

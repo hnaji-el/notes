@@ -7,3 +7,8 @@
    - Use `cursor: pointer` for buttons.
 -> Inline styling:
    - Used for dynamic styling.
+-> Setting in the `body`: `font-family`, `line-height`, `padding`, `height`
+-> Toasty Effect (sliding character):
+   - in term of markup: 
+     -> wrapper: tracking
+        |-> character: sliding
