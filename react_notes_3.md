@@ -13,19 +13,17 @@
 ## What are the problems if we use only components to solve all problems (UI, business logic)?
 
   - It has some complexity to integrate a business logic with React using components.  
-  - React application get flooded with the components that existed for a purpose other
-    than rendering user interface. components that are doing business logic stuff.
+  - React application get flooded with the components that existed for a purpose other than rendering user interface. components that are doing business logic stuff.
 
 ## Hooks
 
-  - Hooks is a dedicated way for us to integrate and share business logic across our application
-    without having to stack a million components in our app.
+  - Hooks is a dedicated way for us to integrate and share business logic across our application without having to stack a million components in our app.
   - A hook is a bundle of business logic. (reusable like components)
   - Hooks let us “hook into” the component instance, for things like:
     -> managing side effects
     -> capturing element references
     -> otimizing performance
-  - There are many hooks that solve discrete problems
+  - There are many hooks that solve discrete problems.
 
 ## Examples of business logic
 
@@ -71,102 +69,62 @@
        performance.
   - This is the conventional way to work with DOM node references in React!.
 
-# Effect Lint Rules
+# Side Effects
 
-  - The state variable inside the effect will grow stale.
-  - The effect has gotten out-of-sync with the rest of the code, and it means that we're seeing
-    multiple versions of the state at the same time.
-  Fix it::
-  - To fix it, we need to add the state variable to the dependency array.
-  - This means that the effect will re-run whenever we call state-setter function,
-    keeping it in sync as the state changes.
+## What is an effect? (external system, side effect or effect)
 
+  - Core React Loop is the purview (main job, typical job responsibilities) of React.
+  - But every now and then when we are building React applications, we need to do things that fall outside of React's purview (not controlled by React). But still need to be synchronized with the state that we're holding in React. These things are called external systems or side effects (effects).
+  - A side effect is a thing that falls outside of React's typical job responsibilities (not controlled by React), but still needs to be synchronized with the state that we're holding in React.
 
+## Examples of the effects
 
-
-
-
-
-
-
-
-
-
-
-
-Core React Loop (React's purview, React's main job, React's typical job responsibilities)
-
-But every now and then when we are building React applications, we need to do things that fall
-outside of React's purview (not controlled by React). But still needs to be synchronized with
-the state that we're holding in React.
-
-These things are called side effects.
-A side effect is a thing that falls outside of React's typical job responsibilities (not controlled by React), but still needs to be synchronized with the state that we're holding in React.
-
-Side effects:
   -> Updating the document's title
   -> Logging to the console
   -> Writing/reading from localStorage
   -> Auto-focusing an input
   -> Listening for global events (window-level events)
   -> Managing timeouts/intervals
+  -> Observing intersections
   -> Making network requests
 
-the render process is for doing the main job and we don't want to be mixing our concerns.
+## Why do we need React.useEffect() hook?
 
-useEffect() hook gives us more control, more flexibility around how that effect is managed.
+  - The render process is for doing the main job and we don't want to be mixing our concerns.
+  - We need more control, more flexibility around how that effect is managed.
+  - The React.useEffect() hook provides us with these features by allowing us to specify:
+    -> effect function
+    -> cleanup function
+    -> effect dependencies
 
-Why not do the work directly in the component? Well, we can, but useEffect gives us additional tools.
+## How React.useEffect() hook works?
 
-Effects always run after the very first render, no matter what we specify in our dependency array.
+  - If dependency array isn't provided:
+    -> Effect runs after every single render.
+  - If dependency array is provided:
+    -> Effect runs after the very first render, and then again whenever the dependencies change.
 
-We can specify dependencies so that the effect only runs sometimes, when a particular value has changed.
+  - The cleanup function (if provided) runs before the effect re-runs or before the component unmounts.
 
-why useEffect hook?
- - dependency array
- - cleanup process
+## Cleanup
 
+  - The cleanup function is used to remove the long-running processes / subscriptions like:
+    -> Event listeners
+    -> Intersection observers
+    -> Intervals and Timeouts
 
-Running on Mount:
+  - Example with the event listeners
+    -> Every time this component is mounted, we add another event listener, stacking them up like hotcakes.
+    -> Because we're referencing a part of the component instance (by calling setMousePosition), the JavaScript garbage collector isn't able to clean up this instance! That means that every time we mount this component, we create an instance that will never be erased.
+  - This is known as a memory leak. The longer the person spends using our application, the more memory it will consume. 
 
-- By default, effects run after every single render
-- Effects always run after the first render, and then again whenever the dependencies change.
+## Stale Values
 
-Cleanup
-
-- long-running processes (subscriptions)
-  -> listening for events
-  -> observing intersections
-  -> managing intervals/timeouts
- 
-- Every time the component is re-mounted, another event listener will be added, without the
-  previous one being removed.
-- Because we're referencing a part of the component instance (by calling setMousePosition),
-  the JavaScript garbage collector isn't able to clean up this instance! That means that every time
-  we mount this component, we create an instance that will never be erased.
-
-- This is known as a memory leak. The longer the person spends using our application,
-  the more memory it will consume. 
-
-- I'm continuing to reference the state-setter function, which is attached to that component
-  instance, it means that JavaScript garbage collector is not able to destroy that component instance.
-
-- when we say we delete a component instance, we mean we remove
-  references to it, so it's kind of floating on its own in space, and we trust the garbage
-  collector to come along and sweep it up. But the garbage collector can't do that if there are
-  live references to it.
-
-Cleanup with dependencies
-
-
-
-stale values
-
-we call our cleanup function and re-run the effect whenever isPlaying changes
-
-In order to truly become comfortable with React, we need to build an intuition for how effects and renders are connected
-
-
+  - The state variable inside the effect will grow stale.
+  - The effect has gotten out-of-sync with the rest of the code, and it means that we're seeing multiple versions of the state at the same time.
+  Fix it::
+  - To fix it, we can add the state variable to the dependency array. This means that the effect will re-run whenever we call state-setter function, keeping it in sync as the state changes.
+  - We can alse use state-setter callback. 
 
 # Strict Mode
 
@@ -195,6 +153,7 @@ In order to truly become comfortable with React, we need to build an intuition f
 
 
 
+In order to truly become comfortable with React, we need to build an intuition for how effects and renders are connected
 
 
 
@@ -209,10 +168,10 @@ In order to truly become comfortable with React, we need to build an intuition f
 
 
 
-this introduces a memory leak:
 
-- Every time this component is mounted, we add another event listener, stacking them up like hotcakes.
-- Because the handleKeyDown callback references a part of the component instance — setIsPlaying — the JS garbage collector can't clean up the instances.
+
+
+
 
 
 
