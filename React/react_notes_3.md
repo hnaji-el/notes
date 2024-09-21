@@ -41,32 +41,26 @@
       ( we're not allowed to call a hook conditionally)
   - Why?
     -> React hooks are implemented in a way where the order matters.
-    -> If we render a component 100 times, it should call the exact same hooks in the exact
-       same order. When we render a hook conditionally, we make it possible for the hooks
-       to change from one render to another!
+    -> If we render a component 100 times, it should call the exact same hooks in the exact same order. When we render a hook conditionally, we make it possible for the hooks to change from one render to another!
   - Why does React rely on the order?
     -> React doesn't take any unique id about hooks. (ex: React.useState({id: 'x', value: 0}))
     -> React has no visibility into the code that we write inside our components.
 
 # React.useState() Hook
   
-  - React.useState() hook lets us “hook into” the component instance, getting and setting state
-    from the instance.
+  - React.useState() hook lets us “hook into” the component instance, getting and setting state from the instance.
   
 # React.useId() Hook
 
-  - React.useId() hook lets us “hook into” the component instance, getting the unique id for
-    every component instance.
+  - React.useId() hook lets us “hook into” the component instance, getting the unique id for every component instance.
 
 # React.useRef() Hook
  
   - It creates a ref object containing a current property. ({ current: undefined })
-  - The ref object is like a box, We can store whatever we want in this box: DOM nodes, numbers,
-    arrays, objects, functions, etc. But the primary use case for refs is to store DOM nodes.
+  - The ref object is like a box, We can store whatever we want in this box: DOM nodes, numbers, arrays, objects, functions, etc. But the primary use case for refs is to store DOM nodes.
   - The ref attribute can be either a ref object or a function.
     -> The ref function will be called on every single render.
-    -> With the ref object, React sets the ref on the very first render. leading to improved
-       performance.
+    -> With the ref object, React sets the ref on the very first render. leading to improved performance.
   - This is the conventional way to work with DOM node references in React!.
 
 # Side Effects
@@ -146,7 +140,14 @@
      -> More detailed error messages.
      -> Strict Mode.
   - Production Environment (no one of the previous list has a meaning in production)
-    
+
+# Custom Hooks
+
+  - There are two advantages to custom hooks:
+
+    -> Code organization. By moving the state/effect out of the component, it makes it easier to understand what the Clock component does. By giving the hook a name like useTime, we can make clear what it does.
+    -> Code reuse. Because I've moved this logic into its own function, I can share that function with other components. If any component needs to know what time it is, in a way which is automatically integrated with React state, all I have to do is import this function.
+    -> Give us the ability to create our own abstraction.    
 
 
 

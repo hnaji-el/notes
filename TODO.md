@@ -1,3 +1,16 @@
-1. add `restart game` button.
-2. commit and push the latest version.
-3. make the forked version private and create new private project & make first commit.
+PROBLEMS::
+  -> Money
+  -> X
+
+PROGRAM::
+  -> Upwork
+  -> Learning(React, Git, ...) / Projects(Portfolio, ...)
+  -> English
+
+————————————————————————————————————————————————————————————————————————————
+   |   | Learning/Projects |      |  Upwork  |       |  Upwork  |   ...  |
+   7  7:30                9:30  10:30      13:30   16:00      20:00    00:00
+
+
+- loans
+- eyeglasses

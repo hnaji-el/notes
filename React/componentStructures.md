@@ -15,17 +15,19 @@ App
     - new-component package to generate a new component.
 
 src/
-|—— component/
-    |—— App/
-    |   |—— App.js
-    |   |—— index.js
-    |—— Header
-    |   |—— Header.js
-    |   |—— index.js
-    |—— Game
-    |   |—— Game.js
-    |   |—— index.js
-
+|—— components/
+|   |—— App/
+|   |   |—— App.js
+|   |   |—— index.js
+|   |—— Header
+|   |   |—— Header.js
+|   |   |—— index.js
+|   |—— Game
+|   |   |—— Game.js
+|   |   |—— index.js
+|—— hooks/
+|   |—— use-mouse-position.js
+|   |—— use-is-onscreen.js
 
 click
   - When a user clicks/taps on a button or presses 'Enter' key whenever the input or button
