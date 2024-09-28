@@ -45,18 +45,6 @@ What is really their ultimate goal?
 
 ## Description
 
-  With expertise in crafting efficient web applications using React, JavaScript, TypeScript, and other modern technologies, I deliver exceptional solutions that align with client goals and project requirements.
-
-  We may be a great fit if you want:
-
-  -> High-quality works on time and within budget.
-  -> Clean, structured code that will be easy to scale and maintain in the future.
-  -> Solutions that address your needs and solve your problems.
-
-  
-
-
-
   [ first 2 sentences ] OK
   - Start with your 2 sentences. That's what's going to show up.
   - That's going to be results packed.
@@ -77,15 +65,9 @@ What is really their ultimate goal?
   - Keep it simple, Keep it short.
   - You don't have to go into great details.
 
-I am here to help you build websites and web applications.
-I'm a resourceful person because if I meet some hurdles or see some difficulty, I don't give up easily, I look for solutions, and I usually find them.
-Thanks to my experience, I can help you meet deadlines and deliver clean and structured code that will be easy to maintain in the future.
-
-Just ping me, and let’s discuss your projects
-Feel free to reach out, and let's create something exceptional together.
-Have any questions? Feel free to contact me!
-
-I am dedicated to delivering high-quality work, and client satisfaction is my utmost priority. Whether it's developing a web application, creating a powerful mobile app, or architecting a robust backend, I am more than happy to offer my services and collaborate on your projects.
-
 ## Portfolio
+
 ## Video
+
+
+ 

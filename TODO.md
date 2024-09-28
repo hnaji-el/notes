@@ -1,16 +1,19 @@
-PROBLEMS::
-  -> Money
-  -> X
-
-PROGRAM::
-  -> Upwork
-  -> Learning(React, Git, ...) / Projects(Portfolio, ...)
-  -> English
-
-————————————————————————————————————————————————————————————————————————————
-   |   | Learning/Projects |      |  Upwork  |       |  Upwork  |   ...  |
-   7  7:30                9:30  10:30      13:30   16:00      20:00    00:00
+PROJECTS::
+  -> Ping-Pong Game (Review, Refactoring, Debuging, Deployment)
+  -> Wordle-Clone (Push it to Github)
+  -> Portfolio Website
 
 
-- loans
-- eyeglasses
+Github Profile
+
+  - Create a Github Project Board.
+  - Github Bio.
+  - Github Profile README.
+
+
+
+Github Profile README (keep it nice and clean)
+  -> try to minimize having any images or pictures on your profile README
+  -> 
+  -> 
+  -> 
