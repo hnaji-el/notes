@@ -1,10 +1,4 @@
-1. Component Structures
-App
-|—— Header
-|—— Game
-    |—— GuessInput
-
-2. File/Folder Structure
+1. File/Folder Structure
   IDEA::
     - Each component has its own folder.
   BENIFIT::

@@ -1,0 +1,9 @@
+
+ ComponentName
+      |- ComponentName.tsx
+      |- helperComponents
+              |- ComponentName1.tsx
+              |- ComponentName2.tsx
+      |- helperFunctions
+              |- FunctionName1.ts
+              |- FunctionName2.ts

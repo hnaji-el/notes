@@ -19,8 +19,7 @@
 
 5. Application Structure
   [ index.js ]
-  - It is responsible for rendering our React application, turning the React elements
-    we write into live DOM nodes.
+  - It is responsible for rendering our React application, turning the React elements we write into live DOM nodes.
   - It includes setup tasks like import global CSS files, or set up any error-logging services.
   [ app.js ]
   - It manages core layout stuff.
