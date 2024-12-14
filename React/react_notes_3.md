@@ -49,13 +49,17 @@
 # React.useState() Hook
   
   - React.useState() hook lets us “hook into” the component instance, getting and setting state from the instance.
+  - Parameter: `initial value` or `initializer function`.
+    - initial value: JavaScript value (number, string, boolean, object, array, etc.).
+      - pay attention to pass a function call, because it will be called on every single render.
+    - initializer function: React will call it on the very first render to calculate the initial value.
   
 # React.useId() Hook
 
   - React.useId() hook lets us “hook into” the component instance, getting the unique id for every component instance.
 
 # React.useRef() Hook
- 
+
   - It creates a ref object containing a current property. ({ current: undefined })
   - The ref object is like a box, We can store whatever we want in this box: DOM nodes, numbers, arrays, objects, functions, etc. But the primary use case for refs is to store DOM nodes.
   - The ref attribute can be either a ref object or a function.
@@ -143,10 +147,13 @@
 
 # Custom Hooks
 
+  - The custom hooks are for bundling React logic (React hooks).
+  - The regular functions are for bundling "pure" JavaScript logic.
+
   - There are two advantages to custom hooks:
 
-    -> Code organization. By moving the state/effect out of the component, it makes it easier to understand what the Clock component does. By giving the hook a name like useTime, we can make clear what it does.
-    -> Code reuse. Because I've moved this logic into its own function, I can share that function with other components. If any component needs to know what time it is, in a way which is automatically integrated with React state, all I have to do is import this function.
+    -> Code organization: By moving the state/effect out of the component, it makes it easier to understand what the Clock component does. By giving the hook a name like useTime, we can make clear what it does.
+    -> Code reuse: Because I've moved this logic into its own function, I can share that function with other components. If any component needs to know what time it is, in a way which is automatically integrated with React state, all I have to do is import this function.
     -> Give us the ability to create our own abstraction.    
 
 
