@@ -28,16 +28,21 @@
 6. Mapping over data
   - You can render an array inside JSX, React will unpack it and render each item.
 
-7. Keys
-  - Keys exist to show React the route. By uniquely identifying each item across all snapshots,
-    React can figure out exactly what to do (React knows which DOM operations to trigger between renders),
-    ensuring the best performance and no edge-case issues.
+7. React Keys
+  - If I have a list of 4 items, and a re-render is triggered that either produces the same list or adds/deletes items, React, without keys, will delete the old list and create a new one.
+  - As we know, interacting with the DOM is one of the slowest things we can do in JavaScript, and so we really want to minimize it to improve performance, which is what React keys help achieve.
+
+  - Keys exist to show React the route. By uniquely identifying each item across all snapshots, React can figure out exactly what to do (React knows which DOM operations to trigger between renders), ensuring the best performance and no UI bugs.
+  - React creates an item with a new key.
+  - React deletes an item with a deleted key.
+  - React checks if there are any changes to perform on the items with the same key or not.
+
   - How do we set the key?
-    -> If each item have a unique id, so set it as a key.
-    -> else if the order stays 100% consistent, use the array index as a unique id.
+    -> If each item has a unique id, so set it as a key.
     -> else check if there is a property of item data that can be used as a unique id.
+    -> else if the order stays 100% consistent, use the array index as a unique id.
     -> else check if there is a possibility to combine some properties to generate a unique id.
-    -> else use `Math.random()`/`crypto.randomUUID()`/`Date.now()` to dynamically generating unique id.
+    -> else use `Math.random()`/`crypto.randomUUID()` to dynamically generating unique id.
 
 8. Styling in React
                                                                                       CSS Modules

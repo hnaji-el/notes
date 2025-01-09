@@ -13,10 +13,10 @@ src/
 |   |—— App/
 |   |   |—— App.js
 |   |   |—— index.js
-|   |—— Header
+|   |—— Header/
 |   |   |—— Header.js
 |   |   |—— index.js
-|   |—— Game
+|   |—— Game/
 |   |   |—— Game.js
 |   |   |—— index.js
 |—— hooks/

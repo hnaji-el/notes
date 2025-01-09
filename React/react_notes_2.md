@@ -1,9 +1,8 @@
 1. Events
   - Events allow web applications to be dynamic.
+  - As the user interacts with the page, hundreds of events are fired off in response.
   - We are listening for an event, and an event handler is called when the event is fired.
-  -? As the user interacts with the page, hundreds of events are fired off in response.
-  - Event listener is a long-running process that will call the event handler whenever the
-    event triggered.
+  - An event listener is a long-running process that calls the event handler whenever the event is triggered.
   - Event listener takes a place in memory, so we need to pay attention for memory leak.
   - React has a built-in event delegation system that implements a bunch of optimizations
     for us. like batching multiple event listeners together to reduce memory consumption.

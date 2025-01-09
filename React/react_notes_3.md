@@ -140,7 +140,7 @@
 # Development Environment Vs. Production Environment
 
   - Development Environment
-     -> Lint warnings (ESLint warnings).
+     -> Lint warnings and errors (ESLint warnings and errors).
      -> More detailed error messages.
      -> Strict Mode.
   - Production Environment (no one of the previous list has a meaning in production)
@@ -161,7 +161,7 @@
 
 
 
-In order to truly become comfortable with React, we need to build an intuition for how effects and renders are connected
+In order to truly become comfortable with React, we need to build an intuition for how renders and effects are connected.
 
 
 
