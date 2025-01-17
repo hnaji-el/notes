@@ -55,5 +55,5 @@
   **:  Solve the problems if it's followed 100%, and this is needed a superhuman discipline, especially
        for larger projects and teams.
   ***: Wet get all the benefits of naming methodologies like BEM, in terms of guaranteed unique selector
-       names. The come with AUTOMATIC SCOPING.
+       names. They come with AUTOMATIC SCOPING.
        AUTOMATIC SCOPING: generate long, guaranteed-unique CSS selector names and scoped them to the component.
